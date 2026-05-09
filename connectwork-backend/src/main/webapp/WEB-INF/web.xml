@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0"
+         metadata-complete="true">
+
+    <display-name>ConnectWork Backend</display-name>
+
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.proyf.proyectofinal.filtro.CorsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>JwtFilter</filter-name>
+        <filter-class>com.proyf.proyectofinal.filtro.JwtFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>JwtFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/api/auth/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProyectoServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.ProyectoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProyectoServlet</servlet-name>
+        <url-pattern>/api/proyectos/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PropuestaServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.PropuestaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PropuestaServlet</servlet-name>
+        <url-pattern>/api/propuestas/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContratoServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.ContratoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContratoServlet</servlet-name>
+        <url-pattern>/api/contratos/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/api/admin/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClienteServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.ClienteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClienteServlet</servlet-name>
+        <url-pattern>/api/cliente/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FreelancerServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.FreelancerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FreelancerServlet</servlet-name>
+        <url-pattern>/api/freelancer/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CatalogoServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.CatalogoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CatalogoServlet</servlet-name>
+        <url-pattern>/api/catalogo/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PdfServlet</servlet-name>
+        <servlet-class>com.proyf.proyectofinal.servlet.PdfServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PdfServlet</servlet-name>
+        <url-pattern>/api/pdf</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
